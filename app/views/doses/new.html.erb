@@ -1,0 +1,22 @@
+<h2>Adding doses for <%= @cocktail.name %> </h2>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+       <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%#= f.input :ingredient_id, collection: @ingredients, label: 'ingredient_id' %>
+        <%= f.association :ingredient %>
+        <%= f.input :description, label: 'description/dose' %>
+        <div class="text-center">
+          <%= f.submit class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<p>Ingredients available<p>
+<% @ingredients.each do |ingredient| %>
+  <li> <%= ingredient.name %> - id: <%= ingredient.id %></li>
+<% end %>
