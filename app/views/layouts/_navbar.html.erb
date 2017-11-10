@@ -1,30 +1,27 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "mojito.jpg" %>
+    <i class="fa fa-glass fa-2x" aria-hidden="true" id="font-orange"></i>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "Add cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Add dose", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Add cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link", id: "font-green"%>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= icon('plus-circle fa-2x', class: "avatar dropdown-toggle", id: "font-orange", "data-toggle" => "dropdown") %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to new_cocktail_path do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Add cocktail") %>
+              <i class="fa fa-plus" id="font-green"></i> <%= t(".profile", default: "Add cocktail") %>
             <% end %>
           </li>
           <li>
-            <%= link_to  "#" do %>
-              <i class="fa fa-home"></i>  <%= t(".profile", default: "Add dose") %>
-            <% end %>
+
           </li>
         </ul>
       </div>
